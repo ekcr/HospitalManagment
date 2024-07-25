@@ -5,7 +5,10 @@ from hospital.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', AboutView.as_view(), name='about'),
+    path('contact/', ContactView.as_view(), name='contact'),
     path('', IndexView.as_view(), name='home'),
     path('login/', LoginView.as_view(), name='login'),
-    path('logout/', LogoutView.as_view(), name='logout')
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('view_doctor/', DoctorView.as_view(), name='view_doctor'),
+
 ]

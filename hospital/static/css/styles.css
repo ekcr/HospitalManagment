@@ -1,0 +1,80 @@
+/* Basic CSS for contact form */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contactSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+}
+
+.contactformContainer {
+    flex: 1;
+    margin-right: 2em;
+}
+
+.sectionHeader {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.contactForm .formGroup {
+    margin-bottom: 1em;
+}
+
+.contactInput {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.btn {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primaryBtn{
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.contactPic{
+    flex: 1;
+}
+
+.contactPic img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
