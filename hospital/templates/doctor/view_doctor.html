@@ -11,6 +11,8 @@
             <th> Doctor ID</th>
             <th> Doctor Name</th>
             <th> Doctor Department</th>
+            <th scope="col"></th> 
+            <th scope="col"></th>
         </tr>
         </thead>
 
@@ -20,6 +22,8 @@
                 <td>{{doc.id}}</td>
                 <td>{{doc.name}}</td>
                 <td>{{doc.department}}</td>
+                <td><a class="btn btn-danger" href="{% url 'delete_doctor' doc.id %}">Delete</a></td>
+                <td><a class="btn btn-primary" href="{% url 'update_doctor' doc.id %}">Update</a></td>
             </tr>
             {% endfor %}
         </tbody>

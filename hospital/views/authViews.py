@@ -1,10 +1,10 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView, RedirectView
-from django.shortcuts import redirect, render
-from hospital.models import Doctors
+from django.views.generic import FormView, RedirectView, TemplateView
+from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 class AboutView(TemplateView):
     template_name = "about.html"
 
@@ -42,11 +42,3 @@ class LogoutView(RedirectView):
         if request.user.is_authenticated:
             logout(request)
         return super().get(request, *args, **kwargs)
-
-class DoctorView(LoginRequiredMixin, TemplateView):
-    template_name = "view_doctor.html" 
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['doctors'] = Doctors.objects.all()
-        return context

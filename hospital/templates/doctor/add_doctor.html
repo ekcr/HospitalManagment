@@ -1,0 +1,27 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container" style="margin-top:50px;">
+    <h2 class="text-center">Add Doctor</h2>
+   <body>
+        <form method="post" action="{% url 'add_doctor' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <button type="submit" class="btn btn-success">Add</button>
+                <button type="button" class="btn btn-info" id="cancelButton">Cancel</button>
+            </div>
+        </form>
+   </body>
+</div>
+
+
+<script>
+    document.getElementById('cancelButton').onclick = function() {
+        window.location.href = "{% url 'view_doctor' %}";
+    };
+</script>
+
+{% endblock %}
+
